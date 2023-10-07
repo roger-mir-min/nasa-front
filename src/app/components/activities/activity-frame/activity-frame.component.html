@@ -1,0 +1,14 @@
+<h2>Activity Frame</h2>
+<div>{{selectedAction}}</div>
+
+<ng-container *ngIf="currentActivity.type == activityType1">
+  <app-activity-type1 [activity]="currentActivity"></app-activity-type1>
+</ng-container>
+
+<ng-container *ngIf="currentActivity.type == activityType2">
+  <app-activity-type2 [activity]="currentActivity"></app-activity-type2>
+</ng-container>
+
+<ng-container *ngIf="currentActivity.type == activityType3">
+  <app-activity-type3 [activity]="currentActivity"></app-activity-type3>
+</ng-container>
