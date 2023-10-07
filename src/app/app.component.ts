@@ -25,6 +25,7 @@ export class AppComponent {
       this.modalText = data.text2;
       this.modalAction = data.action;
 
+      //es determina foto del phyto al modal segons l'acció
       if (this.modalAction == action1) {
         this.modalPhytoImg = urlAction1;
       } else if (this.modalAction == action2) {
