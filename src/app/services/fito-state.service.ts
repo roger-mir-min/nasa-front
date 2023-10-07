@@ -41,7 +41,7 @@ export class phytoStateService {
     } else {
       modalTitle = 'Llàstima!';
     }
-    this.modalService.openModal(modalTitle, modalText);
+    this.modalService.openModal(modalTitle, modalText, solvedActivity.action);
   
     this.router.navigate(['dashboard']);
 

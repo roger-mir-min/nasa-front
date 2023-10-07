@@ -15,7 +15,7 @@ export interface UserForLogin{
 export interface User {
     id?: string;
     email: string,
-    password: string; //key?
+    password?: string; //key?
     name: string,
     phytoplankton: phytoState
 }

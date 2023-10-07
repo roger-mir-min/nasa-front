@@ -3,6 +3,7 @@ import { User, UserForLogin, UserForSignup } from '../models/interfaces';
 import { BehaviorSubject, Observable, Subscription, catchError, of, tap, throwError } from 'rxjs';
 import { rootEndpoint } from '../models/endpoints';
 import { HttpClient } from '@angular/common/http';
+import { dummyPhyto } from '../models/phyto-dummy';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,7 @@ export class AuthService {
   
   login(formValue: UserForLogin) {
     alert('usuari introduït: ' + formValue.email + ' i ' + formValue.password);
+    this.currentUserSubject.next({name:'Pau', phytoplankton:dummyPhyto, email: 'aaa@aa.com', password:'asdf'});
     return of(''); //prova
     //recorda posar tipus de la funció
     // return this.http.post<User>(rootEndpoint + `login`, { email: formValue['inputEmail'], password: formValue['inputKey'] }).pipe(

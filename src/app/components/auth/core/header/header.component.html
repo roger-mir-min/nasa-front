@@ -1,3 +1,4 @@
-<p>
-  header works!
-</p>
+<div>HEADER</div>
+<ng-container *ngIf="user$|async as user">
+  <div>Hola, {{user.name}}</div>
+</ng-container>

@@ -12,6 +12,7 @@ export class ModalComponent implements OnInit, OnDestroy {
 
   @Input() title = '';
   @Input() text = '';
+  @Input() actionUrl = '';
 
   private element: any;
 

@@ -38,7 +38,7 @@ export const activitiesList: ActivitiesList = {
             extraInfo: 'Sabies que fdsaf'
         },
         {
-            action: action1,
+            action: action2,
             type: activityType2,
             statement: "Ordena de posterior a anterior",
             options: ['b', 'c', 'a'],
@@ -56,7 +56,7 @@ export const activitiesList: ActivitiesList = {
             extraInfo: 'Sabies que fdsaf'
         },
                 {
-            action: action1,
+            action: action3,
             type: activityType2,
             statement: "Ordena de posterior a anterior",
             options: ['b', 'c', 'a'],
