@@ -1,6 +1,4 @@
-<p>
-  activity-type2 works!
-</p>
-<div>hola tipus {{activity.type}}</div>
-<div>hola tipus {{activity.statement}}</div>
+<div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
+  <div class="example-box" *ngFor="let timePeriod of optionsArray" cdkDrag>{{timePeriod}}</div>
+</div>
 

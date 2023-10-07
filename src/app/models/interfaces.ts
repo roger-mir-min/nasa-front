@@ -28,6 +28,7 @@ export interface Activity {
     options?: Answer,
     solution: Answer,
     extraInfo: string,
+    assets?: string[]
 }
 
 export interface SolvedActivity extends Activity{

@@ -6,6 +6,7 @@ import { catchError, switchMap } from 'rxjs/operators';
 import { BehaviorSubject, throwError } from 'rxjs';
 import { ModalService } from './modal.service';
 import { Router } from '@angular/router';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,13 +15,14 @@ export class FitoStateService {
   private http = inject(HttpClient);
   private modalService = inject(ModalService);
   private router = inject(Router);
+  private authService = inject(AuthService);
 
   fitoStateSubj = new BehaviorSubject({ health: 100, energy: 100 });
   fitoState$= this.fitoStateSubj.asObservable();
 
   sendResults(solvedActivity: SolvedActivity) {
     //s'envia solució, es retorna nou estat que s'assigna a this.fitoState
-    // this.http.put<FitoState>(rootEndpoint + sendResultsEndpoint, {id:, action:solvedActivity.action, answer:solvedActivity.userAnswer}).pipe(
+    // this.http.put<FitoState>(rootEndpoint + sendResultsEndpoint, {id:this.authService.currentUser, action:solvedActivity.action, answer:solvedActivity.userAnswer}).pipe(
     //   catchError(error => {
     //     console.error('Error:', error);
     //     return throwError(() => error);

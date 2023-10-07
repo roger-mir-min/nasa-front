@@ -22,8 +22,9 @@ export const activitiesList: ActivitiesList = {
         {
             action: action1,
             type: activityType2,
-            statement: "Escull al mapa",
-            solution: ["solució"],
+            statement: "Ordena",
+            options: ['1', '20', '4'],
+            solution: ["1", "4", "20"],
             extraInfo: 'Sabies que fdsaf'
         },      
     ],
