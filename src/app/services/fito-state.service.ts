@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject, OnInit } from '@angular/core';
 import { Action, phytoState, SolvedActivity, SolvedActivityResult } from '../models/interfaces';
 import { rootEndpoint, sendResultsEndpoint } from '../models/endpoints';
-import { catchError, switchMap } from 'rxjs/operators';
+import { catchError, switchMap, tap } from 'rxjs/operators';
 import { BehaviorSubject, throwError } from 'rxjs';
 import { ModalService } from './modal.service';
 import { Router } from '@angular/router';
@@ -23,14 +23,27 @@ export class phytoStateService {
 
 
   sendResults(solvedActivity: SolvedActivity) {
+    const body = { id: this.authService.currentUser?.id, action: solvedActivity.action, answer: solvedActivity.points };
+    alert("S'ha enviat: " + body.action + body.id + body.answer);
+    console.log(body);
     //s'envia solució, es retorna nou estat que s'assigna a this.phytoState
-    // this.http.put<phytoState>(rootEndpoint + sendResultsEndpoint, {id:this.authService.currentUser, action:solvedActivity.action, answer:solvedActivity.userAnswer}).pipe(
-    //   catchError(error => {
-    //     console.error('Error:', error);
-    //     return throwError(() => error);
-    //   })).subscribe(res => {
-    //     this.phytoStateSubj.next(res); //després es navega a dashboard
-    //   })
+    this.http.post<phytoState>(rootEndpoint + sendResultsEndpoint, body).pipe(tap(
+      res => {
+        console.log(res)
+        this.authService.currentUserSubject.next(
+          {
+            id: this.authService.currentUser?.id,
+            email: this.authService.currentUser?.email!,
+            password: this.authService.currentUser?.password,
+            name: this.authService.currentUser?.password!,
+            phytoplankton: res!
+          })
+      }
+    ),
+      catchError(error => {
+        console.error('Error:', error);
+        return throwError(() => error);
+      })).subscribe(res => { console.log(res) });
 
     //segons si la resposta és correcta o no obrim modal amb un text o altre
     //AIXÒ HAURÀ D'ANAR DINS DEL SUBSCRIBE QUAN UNIM AMB BACKEND

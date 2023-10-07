@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ModalService } from './services/modal.service';
 import { action0, action1, action2, action3, urlAction1, urlAction2, urlAction3, urlAction4, urlAction0 } from './models/temes';
+import { phytoStateService } from './services/fito-state.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { action0, action1, action2, action3, urlAction1, urlAction2, urlAction3,
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  private phytoService = inject(phytoStateService);
   title = 'nasa-frontend';
 
   isModalVisible = false;

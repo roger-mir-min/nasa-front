@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable, Subscription, catchError, of, tap, throwEr
 import { rootEndpoint } from '../models/endpoints';
 import { HttpClient } from '@angular/common/http';
 import { dummyPhyto } from '../models/phyto-dummy';
+import { phytoStateService } from './fito-state.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AuthService {
 
   //Subscription for currentUser
   currentUser: User | null = null; //current logged in user
-  private currentUserSubject = new BehaviorSubject<User | null>(null);
+  currentUserSubject = new BehaviorSubject<User | null>(null);
   currentUser$ = this.currentUserSubject.asObservable();
   subscUser: Subscription = this.currentUser$.subscribe(res => this.currentUser = res);
 
@@ -24,10 +25,11 @@ export class AuthService {
     // this.currentUserSubject.next({name:'Pau', phytoplankton:dummyPhyto, email: 'aaa@aa.com', password:'asdf'});
     // return of(''); 
     //recorda posar tipus de la funció
-    return this.http.post<User>(rootEndpoint + `auth/authenticate`, { email: formValue.email, password: formValue.password }).pipe(
+    return this.http.post<User>(rootEndpoint + `auth/login`, { email: formValue.email, password: formValue.password }).pipe(
       tap((user: User) => {
-          this.currentUserSubject.next(user); //phyto-state service ho rep i actualitza phyto-state
+        this.currentUserSubject.next(user); //phyto-state service ho rep i actualitza phyto-state
           console.log("New user logged in: " +  user);
+          console.log(user);
           // this.navAfterLogin();
         
       }),

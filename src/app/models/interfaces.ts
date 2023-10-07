@@ -52,10 +52,11 @@ export interface Activity {
 
 export interface SolvedActivity extends Activity{
     userAnswer: Answer;
-    points: number | boolean;
+    points: boolean;
 }
 
-export interface SolvedActivityResult{
+export interface SolvedActivityResult {
+    id: string,
     action: Action,
-    points: number | boolean //number o boolean?
+    points: boolean
 }
