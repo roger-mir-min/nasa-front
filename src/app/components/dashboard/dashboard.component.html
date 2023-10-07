@@ -2,8 +2,9 @@
 <h3>What do you want to do?</h3>
 <div class="phytoto-frame" *ngIf="user$|async as user">
     <div>{{phytoImg}}</div>
-    <!-- <img src=""> -->
+    <img [src]="phytoImg">
 </div>
-<button (click)="navigateToActivity(action1)">{{action1}}</button>
-<button (click)="navigateToActivity(action2)">{{action2}}</button>
-<button (click)="navigateToActivity(action3)">{{action3}}</button>
+<button (click)="navigateToActivity(action1)">Photosynthesis</button>
+<button (click)="navigateToActivity(action2)">Reproduce</button>
+<button (click)="navigateToActivity(action3)">Migrate</button>
+<button (click)="navigateToActivity(action4)">Group</button>

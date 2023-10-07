@@ -1,7 +1,7 @@
 import { Activity } from "./interfaces"
 
 export const dummyActivity: Activity = {
-    action: 'eat',
+    action: 1,
     type: 'select',
     statement: '2+2?',
     options: ['1', '2', '4', '6'],

@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { action1, action2, action3, urlState1, urlState2, urlState3, urlState4 } from '../../models/temes';
+import { action1, action2, action3, action4, urlState1, urlState2, urlState3, urlState4 } from '../../models/temes';
 import { Action } from 'src/app/models/interfaces';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
@@ -19,6 +19,7 @@ export class DashboardComponent implements OnInit {
   action1 = action1;
   action2 = action2;
   action3 = action3;
+  action4 = action4;
 
   navigateToActivity(action: Action) {
     this.router.navigate([`activities/${action}`]);

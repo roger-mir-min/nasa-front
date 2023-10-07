@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalService } from './services/modal.service';
-import { action1, action2, action3, urlAction1, urlAction2, urlAction3, urlAction4 } from './models/temes';
+import { action0, action1, action2, action3, urlAction1, urlAction2, urlAction3, urlAction4, urlAction0 } from './models/temes';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ export class AppComponent {
   isModalVisible = false;
   modalTitle = '';
   modalText = '';
-  modalAction = '';
+  modalAction = 1;
   modalPhytoImg = '';
 
   constructor(private modalService: ModalService) { }
@@ -26,7 +26,9 @@ export class AppComponent {
       this.modalAction = data.action;
 
       //es determina foto del phyto al modal segons l'acció
-      if (this.modalAction == action1) {
+      if (this.modalAction == 0) { //no sé per què dona error si poso action0
+        this.modalPhytoImg = urlAction0;
+      } else if (this.modalAction == action1) {
         this.modalPhytoImg = urlAction1;
       } else if (this.modalAction == action2) {
         this.modalPhytoImg = urlAction2

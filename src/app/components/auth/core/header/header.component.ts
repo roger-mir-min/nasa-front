@@ -11,6 +11,10 @@ export class HeaderComponent implements OnInit {
 
   user$;
 
+  logout(){
+    this.authService.logout();
+  }
+
   constructor() {
     this.user$ = this.authService.currentUser$;
   }

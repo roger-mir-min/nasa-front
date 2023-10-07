@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject, OnInit } from '@angular/core';
-import { phytoState, SolvedActivity, SolvedActivityResult } from '../models/interfaces';
+import { Action, phytoState, SolvedActivity, SolvedActivityResult } from '../models/interfaces';
 import { rootEndpoint, sendResultsEndpoint } from '../models/endpoints';
 import { catchError, switchMap } from 'rxjs/operators';
 import { BehaviorSubject, throwError } from 'rxjs';
@@ -34,14 +34,14 @@ export class phytoStateService {
 
     //segons si la resposta és correcta o no obrim modal amb un text o altre
     //AIXÒ HAURÀ D'ANAR DINS DEL SUBSCRIBE QUAN UNIM AMB BACKEND
-    let modalTitle = '';
+    let modalTitle = 'Llàstima!'; //per defecte, error
     let modalText = solvedActivity.extraInfo;
+    let modalAction = 0 as Action; //per defecte, error
     if (solvedActivity.points == true) {
       modalTitle = 'Resposta correcta!';
-    } else {
-      modalTitle = 'Llàstima!';
-    }
-    this.modalService.openModal(modalTitle, modalText, solvedActivity.action);
+      modalAction = solvedActivity.action;
+    } 
+    this.modalService.openModal(modalTitle, modalText, modalAction);
   
     this.router.navigate(['dashboard']);
 

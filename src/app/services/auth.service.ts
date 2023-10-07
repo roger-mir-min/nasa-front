@@ -21,41 +21,48 @@ export class AuthService {
   
   login(formValue: UserForLogin) {
     alert('usuari introduït: ' + formValue.email + ' i ' + formValue.password);
-    this.currentUserSubject.next({name:'Pau', phytoplankton:dummyPhyto, email: 'aaa@aa.com', password:'asdf'});
-    return of(''); //prova
+    // this.currentUserSubject.next({name:'Pau', phytoplankton:dummyPhyto, email: 'aaa@aa.com', password:'asdf'});
+    // return of(''); 
     //recorda posar tipus de la funció
-    // return this.http.post<User>(rootEndpoint + `login`, { email: formValue['inputEmail'], password: formValue['inputKey'] }).pipe(
-    //   tap((user: User) => {
-    //       this.currentUserSubject.next(user); //phyto-state service ho rep i actualitza phyto-state
-    //       console.log("New user logged in.");
-    //       // this.navAfterLogin();
+    return this.http.post<User>(rootEndpoint + `auth/authenticate`, { email: formValue.email, password: formValue.password }).pipe(
+      tap((user: User) => {
+          this.currentUserSubject.next(user); //phyto-state service ho rep i actualitza phyto-state
+          console.log("New user logged in: " +  user);
+          // this.navAfterLogin();
         
-    //   }),
-    //     catchError((error) => {
-    //       if (error.status === 400) {
-    //         console.log(error);
-    //       } else {
-    //         alert('Error inesperat. Si us plau, intenti-ho més tard.');
-    //       }
-    //       return throwError(() => new Error(error));
-    //   })
-    // );
+      }),
+        catchError((error) => {
+          if (error.status === 400) {
+            console.log(error);
+          } else {
+            alert('Error inesperat. Si us plau, intenti-ho més tard.');
+          }
+          return throwError(() => new Error(error));
+      })
+    );
   }
 
   signup(userFormValue: UserForSignup): Observable<any> {
     alert('Signup amb: ' + userFormValue.name + userFormValue.email +  userFormValue.password + userFormValue.phytoplanktonName);
-    return of('');
+    console.log(userFormValue);
     //al component s'haurà de navegar a login component
-    // return this.http.post(rootEndpoint + `signup`, userFormValue).pipe(
-    //   catchError((error) => {
-    //     if (error.status === 400) {
-    //       console.log(error);
-    //     } else {
-    //       alert('Error inesperat. Si us plau, intenti-ho més tard.');
-    //     }
-    //     return throwError(() => new Error(error));
-    //   })
-    // );
+    return this.http.post<User>(rootEndpoint + `auth/register`, userFormValue).pipe(
+      catchError((error) => {
+        if (error.status === 400) {
+          console.log(error);
+        } else {
+          alert('Error inesperat. Si us plau, intenti-ho més tard.');
+        }
+        return throwError(() => new Error(error));
+      })
+    );
+  }
+
+  logout() {
+    this.http.post(rootEndpoint + 'auth/logout', this.currentUser).subscribe(res => {
+      alert('resposta: ' + res);
+      console.log('resposta: ' + res);
+   });
   }
 
 }

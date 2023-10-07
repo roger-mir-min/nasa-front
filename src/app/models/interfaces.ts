@@ -1,4 +1,4 @@
-import { action1, action2, action3 } from "./temes";
+import { action0, action1, action2, action3, action4 } from "./temes";
 import { activityType1, activityType2, activityType3 } from "./activity-types";
 
 export interface UserForSignup{
@@ -34,7 +34,7 @@ export interface phytoState {
     inSymbiosis: boolean
 }
 
-export type Action = typeof action1 | typeof action2 | typeof action3;
+export type Action = typeof action0 | typeof action1 | typeof action2 | typeof action3 | typeof action4;
 export type ActivityType = typeof activityType1 | typeof activityType2 | typeof activityType3;
 
 export type Answer = string[]; // o string? o object?

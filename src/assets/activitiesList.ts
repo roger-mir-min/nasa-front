@@ -1,11 +1,12 @@
 import { Activity } from "src/app/models/interfaces"
-import { action1, action2, action3 } from "src/app/models/temes"
+import { action1, action2, action3, action4 } from "src/app/models/temes"
 import { activityType1, activityType2, activityType3 } from "src/app/models/activity-types"
 
 interface ActivitiesList {
     [action1]: Activity[],
     [action2]: Activity[],
-    [action3]: Activity[]
+    [action3]: Activity[],
+    [action4]: Activity[]
 
 }
 
@@ -57,6 +58,24 @@ export const activitiesList: ActivitiesList = {
         },
                 {
             action: action3,
+            type: activityType2,
+            statement: "Ordena de posterior a anterior",
+            options: ['b', 'c', 'a'],
+            solution: ["c", "b", "a"],
+            extraInfo: 'Sabies que fdsaf'
+        },    
+    ],
+    [action4]: [
+        {
+            action: action4,
+            type: 'select',
+            statement: "How many hours a day does a phytoplancton need to rest?",
+            options: ['2', '4', '24'],
+            solution: ["24"],
+            extraInfo: 'Sabies que fdsaf'
+        },
+                {
+            action: action4,
             type: activityType2,
             statement: "Ordena de posterior a anterior",
             options: ['b', 'c', 'a'],

@@ -12,7 +12,7 @@ export class ModalService {
     text1: string,
     text2: string,
     action: Action
-  }>({ visible: false, text1: '', text2: '', action: 'photosynthesis' });
+  }>({ visible: false, text1: '', text2: '', action: 1 });
   modalVisibility$ = this.modalVisibilitySubject.asObservable();
 
   constructor() { }
@@ -22,7 +22,7 @@ export class ModalService {
   }
 
   closeModal(): void {
-    this.modalVisibilitySubject.next({ visible: false, text1: '', text2: '', action:'rest'});
+    this.modalVisibilitySubject.next({ visible: false, text1: '', text2: '', action:1});
   }
 
 }

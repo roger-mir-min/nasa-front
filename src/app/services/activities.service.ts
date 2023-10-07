@@ -10,8 +10,12 @@ export class ActivitiesService {
 constructor() { }
 
   getActivity(actionType: Action) {
-    const randomNum: number = Math.floor(Math.random() * (Object.keys(activitiesList).length - 1));
-    return activitiesList[actionType][randomNum];
+    if (actionType != 0) {
+      let randomNum: number = Math.floor(Math.random() * (activitiesList[actionType].length));
+      return activitiesList[actionType][randomNum];
+    } else {
+      return activitiesList[1][0];
+    }
   }
 
   
