@@ -1,16 +1,35 @@
 import { action1, action2, action3 } from "./temes";
 import { activityType1, activityType2, activityType3 } from "./activity-types";
 
-
-export interface User {
-    id: string;
-    password: string; //key?
+export interface UserForSignup{
+    name: string,
+    phytoplanktonName: string,
+    email: string,
+    password: string
 }
 
-export interface FitoState {
+export interface UserForLogin{
+    email: string,
+    password: string
+}
+export interface User {
+    id?: string;
+    email: string,
+    password: string; //key?
+    name: string,
+    phytoplankton: phytoState
+}
+
+
+
+export interface UserWithId extends User {
+    id: string
+}
+
+export interface phytoState {
     name: string,
     health: number,
-    co2Consumed: number, //CO2 de cara a galeria
+    co2Consumed: number,
     reproductions: number,
     inSymbiosis: boolean
 }

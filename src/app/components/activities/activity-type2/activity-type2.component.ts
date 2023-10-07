@@ -2,7 +2,7 @@ import { Component, Input, OnInit, ViewChild, inject } from '@angular/core';
 import { ActivitiesService } from '../../../services/activities.service';
 import { Activity } from 'src/app/models/interfaces';
 import { dummyActivity } from 'src/app/models/dummy-activity';
-import { FitoStateService } from 'src/app/services/fito-state.service';
+import { phytoStateService } from 'src/app/services/fito-state.service';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
@@ -11,7 +11,7 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
   styleUrls: ['./activity-type2.component.css']
 })
 export class ActivityType2Component implements OnInit {
-  private fitoStateService = inject(FitoStateService);
+  private phytoStateService = inject(phytoStateService);
 
   private _activity: Activity = dummyActivity;
   optionsArray = [...this._activity.options!];
@@ -30,16 +30,16 @@ export class ActivityType2Component implements OnInit {
 
   checkAnswer(answer: string) {
     if (answer == this.activity.solution[0]) {
-      this.fitoStateService.sendResults({ ...this.activity, userAnswer: [answer], points: true });
+      this.phytoStateService.sendResults({ ...this.activity, userAnswer: [answer], points: true });
     } else {
-      this.fitoStateService.sendResults({ ...this.activity, userAnswer: [answer], points: false });
+      this.phytoStateService.sendResults({ ...this.activity, userAnswer: [answer], points: false });
     }
   }
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.optionsArray, event.previousIndex, event.currentIndex);
     if (this.compareArrays(this.optionsArray, this._activity.solution)) {
-      this.fitoStateService.sendResults({ ...this.activity, userAnswer: this.optionsArray, points: true });
+      this.phytoStateService.sendResults({ ...this.activity, userAnswer: this.optionsArray, points: true });
     }
   }
   

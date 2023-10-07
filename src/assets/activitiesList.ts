@@ -32,20 +32,36 @@ export const activitiesList: ActivitiesList = {
         {
             action: action2,
             type: 'select',
-            statement: "How much water drinks a fitoplancton a day?",
+            statement: "How much water drinks a phytoplancton a day?",
             options: ['1', '4', '20'],
-            solution: ["70"],
+            solution: ["20"],
             extraInfo: 'Sabies que fdsaf'
-        }
+        },
+        {
+            action: action1,
+            type: activityType2,
+            statement: "Ordena de posterior a anterior",
+            options: ['b', 'c', 'a'],
+            solution: ["c", "b", "a"],
+            extraInfo: 'Sabies que fdsaf'
+        },  
     ],
     [action3]: [
         {
             action: action3,
             type: 'select',
-            statement: "How many hours a day does a fitoplancton need to rest?",
+            statement: "How many hours a day does a phytoplancton need to rest?",
             options: ['2', '4', '24'],
-            solution: ["70"],
+            solution: ["24"],
             extraInfo: 'Sabies que fdsaf'
-        }
+        },
+                {
+            action: action1,
+            type: activityType2,
+            statement: "Ordena de posterior a anterior",
+            options: ['b', 'c', 'a'],
+            solution: ["c", "b", "a"],
+            extraInfo: 'Sabies que fdsaf'
+        },    
     ]
 }
