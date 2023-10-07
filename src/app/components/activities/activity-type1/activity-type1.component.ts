@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, inject } from '@angular/core';
 import { ActivitiesService } from '../../../services/activities.service';
 import { Activity } from 'src/app/models/interfaces';
 import { dummyActivity } from 'src/app/models/dummy-activity';
@@ -17,7 +17,9 @@ export class ActivityType1Component implements OnInit {
 
   checkAnswer(answer: string) {
     if (answer == this.activity.solution[0]) {
-      this.fitoStateService.sendResults({ action: this.activity.action, points: true });
+      this.fitoStateService.sendResults({ ...this.activity, userAnswer: [answer], points: true });
+    } else {
+      this.fitoStateService.sendResults({ ...this.activity, userAnswer: [answer], points: false });
     }
   }
 

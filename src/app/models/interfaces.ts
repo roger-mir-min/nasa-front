@@ -8,8 +8,11 @@ export interface User {
 }
 
 export interface FitoState {
+    name: string,
     health: number,
-    energy: number
+    co2Consumed: number, //CO2 de cara a galeria
+    reproductions: number,
+    inSymbiosis: boolean
 }
 
 export type Action = typeof action1 | typeof action2 | typeof action3;
@@ -23,11 +26,13 @@ export interface Activity {
     type: ActivityType,
     statement: string,
     options?: Answer,
-    solution: Answer
+    solution: Answer,
+    extraInfo: string,
 }
 
 export interface SolvedActivity extends Activity{
     userAnswer: Answer;
+    points: number | boolean;
 }
 
 export interface SolvedActivityResult{

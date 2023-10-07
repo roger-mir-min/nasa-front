@@ -1,0 +1,18 @@
+<div>
+  {{title}}
+</div>
+<div>
+  {{text}}
+</div>
+
+<div class="modal-overlay" (click)="onOverlayClick($event)">
+  <div class="modal-content">
+      <div>
+        {{title}}
+      </div>
+      <div>
+        {{text}}
+      </div>
+      <button (click)="closeModal()" class="ok-button">Ok</button>
+  </div>
+</div>

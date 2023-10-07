@@ -16,13 +16,15 @@ export const activitiesList: ActivitiesList = {
             type: activityType1,
             statement: "What prortion of the Earth's surface is covered by water?",
             options: ['20', '40', '85'],
-            solution: ["70"]
+            solution: ["85"],
+            extraInfo: 'Sabies que fdsaf'
         },
         {
             action: action1,
             type: activityType2,
             statement: "Escull al mapa",
-            solution: ["solució"]
+            solution: ["solució"],
+            extraInfo: 'Sabies que fdsaf'
         },      
     ],
     [action2]: [
@@ -31,7 +33,8 @@ export const activitiesList: ActivitiesList = {
             type: 'select',
             statement: "How much water drinks a fitoplancton a day?",
             options: ['1', '4', '20'],
-            solution: ["70"]
+            solution: ["70"],
+            extraInfo: 'Sabies que fdsaf'
         }
     ],
     [action3]: [
@@ -40,7 +43,8 @@ export const activitiesList: ActivitiesList = {
             type: 'select',
             statement: "How many hours a day does a fitoplancton need to rest?",
             options: ['2', '4', '24'],
-            solution: ["70"]
+            solution: ["70"],
+            extraInfo: 'Sabies que fdsaf'
         }
     ]
 }

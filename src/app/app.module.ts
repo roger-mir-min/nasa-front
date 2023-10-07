@@ -18,6 +18,7 @@ import { ActivityType3Component } from './components/activities/activity-type3/a
 import { ActivityType2Component } from './components/activities/activity-type2/activity-type2.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { ModalComponent } from './shared/components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { RegisterComponent } from './components/auth/register/register.component
     RegisterComponent,
     PageNotFoundComponent,
     DashboardComponent,
+    ModalComponent,
     ActivityFrameComponent,
     ActivityType1Component,
     ActivityType2Component,

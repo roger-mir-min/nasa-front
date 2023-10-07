@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModalService } from './services/modal.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'nasa-frontend';
+
+  isModalVisible = false;
+  modalTitle = '';
+  modalText = '';
+
+  constructor(private modalService: ModalService) { }
+
+  ngOnInit(): void {
+    this.modalService.modalVisibility$.subscribe(data => {
+      this.isModalVisible = data.visible;
+      this.modalTitle = data.text1;
+      this.modalText = data.text2;
+    });
+  }
 }
