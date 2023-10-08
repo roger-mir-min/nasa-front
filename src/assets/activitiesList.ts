@@ -22,7 +22,14 @@ export const activitiesList: ActivitiesList = {
         ],
     extraInfo: "They're invisible superheroes! Plankton does photosynthesis, like plants, and takes carbon dioxide from the air and turns it into fresh oxygen that we all need to breathe..."
     },
-
+{
+	action: action1,
+        type: activityType2,
+        statement: "Order this sentence correctly",
+        options: ['of the fish', 'in the sea', 'we are the food'],
+        solution: ['we are the food', 'of the fish', 'in the sea'],
+        extraInfo: "They're like a vacuum cleaner. They absorb carbon dioxide, which is the gas that heats our planet, and store it at the bottom of the ocean."
+    },
     {
     action: action1,
     type: activityType1,
@@ -48,13 +55,22 @@ export const activitiesList: ActivitiesList = {
         extraInfo: "They're an important part of the food chain. If plankton disappears, all the animals that feed on it would too..."
         },
         {
-            action: action2,
-            type: activityType2,
-            statement: "Ordena de posterior a anterior",
-            options: ['b', 'c', 'a'],
-            solution: ["c", "b", "a"],
-            extraInfo: 'Sabies que fdsaf'
-        },  
+	action: action2,
+        type: activityType2,
+        statement: "Order this sentence correctly",
+        options: ['millions of years', 'we have been', 'on earth for'],
+        solution: ['we have been', 'on earth for', 'millions of years'],
+        extraInfo: "Changes in ocean temperature and acidity can affect plankton, which in turn affects the entire marine ecosystem."
+}
+
+        // {
+        //     action: action2,
+        //     type: activityType2,
+        //     statement: "Ordena de posterior a anterior",
+        //     options: ['b', 'c', 'a'],
+        //     solution: ["c", "b", "a"],
+        //     extraInfo: 'Sabies que fdsaf'
+        // },  
     ],
     [action3]: [
         {
@@ -69,13 +85,21 @@ export const activitiesList: ActivitiesList = {
         extraInfo: 'Plankton is tiny! They are tiny creatures that float in the water, like astronauts in aquatic space...'
         },
         {
-            action: action3,
-            type: activityType2,
-            statement: "Ordena de posterior a anterior",
-            options: ['b', 'c', 'a'],
-            solution: ["c", "b", "a"],
-            extraInfo: 'Sabies que fdsaf'
-        },    
+	action: action3,
+        type: activityType2,
+        statement: "Order this sentence correctly",
+        options: ['satellites', 'scientists study', 'us with space'],
+        solution: ['scientists study', 'us with space', 'satellites'],
+        extraInfo: "Plankton is truly amazing and powerful! Despite being tiny, its role in climate balance is gigantic."
+}
+        // {
+        //     action: action3,
+        //     type: activityType2,
+        //     statement: "Ordena de posterior a anterior",
+        //     options: ['b', 'c', 'a'],
+        //     solution: ["c", "b", "a"],
+        //     extraInfo: 'Sabies que fdsaf'
+        // },    
     ],
     [action4]: [
 {
@@ -100,13 +124,13 @@ export const activitiesList: ActivitiesList = {
         ],
     extraInfo: 'When phytoplankton grows in farms, it helps keep the oceans clean and provides food for many marine critters, Imagine phytoplankton farms as supermarkets for fish, where they find delicious and fresh food....'
     },
-                {
-            action: action4,
-            type: activityType2,
-            statement: "Ordena de posterior a anterior",
-            options: ['b', 'c', 'a'],
-            solution: ["c", "b", "a"],
-            extraInfo: 'Sabies que fdsaf'
-        },    
+{
+	action: action4,
+        type: activityType2,
+        statement: "Order this sentence correctly",
+        options: ['the ocean for us all', 'to live on together', 'scientists create farms in'],
+        solution: ['scientists create farms in', 'he ocean for us all', 'to live on together'],
+        extraInfo: "Phytoplankton in the farms feed on sunlight, just like they're sunbathing all day!"
+}
     ]
 }
