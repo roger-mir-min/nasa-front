@@ -66,7 +66,6 @@ get getPassword() {
     } else {
       this.authService.signup(formValue).subscribe({
         next: () => {
-          this.router.navigate(['dashboard']);
             this.userNotFoundError = false;
         },
         error:

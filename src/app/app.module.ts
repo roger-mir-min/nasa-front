@@ -22,6 +22,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { VideoComponent } from './components/video/video.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ActivityFrameComponent,
     ActivityType1Component,
     ActivityType2Component,
-    ActivityType3Component
+    ActivityType3Component,
+    VideoComponent
   ],
   imports: [
     BrowserModule,

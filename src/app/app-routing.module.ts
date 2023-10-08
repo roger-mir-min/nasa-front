@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ActivityFrameComponent } from './components/activities/activity-frame/activity-frame.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { VideoComponent } from './components/video/video.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: RegisterComponent
+  },
+  {
+    path: 'video',
+    component: VideoComponent
   },
   {
     path: '**',

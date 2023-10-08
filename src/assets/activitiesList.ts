@@ -12,31 +12,40 @@ interface ActivitiesList {
 
 export const activitiesList: ActivitiesList = {
     [action1]: [
-        {
-            action: action1,
-            type: activityType1,
-            statement: "What prortion of the Earth's surface is covered by water?",
-            options: ['20', '40', '85'],
-            solution: ["85"],
-            extraInfo: 'Sabies que fdsaf'
-        },
-        {
-            action: action1,
-            type: activityType2,
-            statement: "Ordena",
-            options: ['1', '20', '4'],
-            solution: ["1", "4", "20"],
-            extraInfo: 'Sabies que fdsaf'
-        },      
-    ],
+    {
+    action: action1,
+    type: activityType1, 
+    statement: "Plankton is often called invisible superheroes because they perform ________?",
+    options: ['Acrobatics', 'Photosynthesis', 'Magic tricks'],
+    solution: [
+            "Photosynthesis"
+        ],
+    extraInfo: "They're invisible superheroes! Plankton does photosynthesis, like plants, and takes carbon dioxide from the air and turns it into fresh oxygen that we all need to breathe..."
+    },
+
+    {
+    action: action1,
+    type: activityType1,
+    statement: "Plankton helps cool the Earth by ________ sunlight.?",
+    options: ['Reflecting', 'Evaporating', 'Absorbing'
+        ],
+    solution: [
+            "Reflecting"
+        ],
+    extraInfo: 'They help cool the Earth. When plankton grows, it reflects the sunlight back into space, keeping the planet cool...'
+    }
+],
     [action2]: [
         {
-            action: action2,
-            type: 'select',
-            statement: "How much water drinks a phytoplancton a day?",
-            options: ['1', '4', '20'],
-            solution: ["20"],
-            extraInfo: 'Sabies que fdsaf'
+        action: action2,
+        type: activityType1, 
+        statement: "Plankton plays a crucial role in the ocean's food chain, and if it disappears, ------.?",
+        options: ['They become invisible', 'The whole ecosystem could be affected', 'The ocean gets colder'
+            ],
+        solution: [
+                "The whole ecosystem could be affected"
+            ],
+        extraInfo: "They're an important part of the food chain. If plankton disappears, all the animals that feed on it would too..."
         },
         {
             action: action2,
@@ -49,14 +58,17 @@ export const activitiesList: ActivitiesList = {
     ],
     [action3]: [
         {
-            action: action3,
-            type: 'select',
-            statement: "How many hours a day does a phytoplancton need to rest?",
-            options: ['2', '4', '24'],
-            solution: ["24"],
-            extraInfo: 'Sabies que fdsaf'
+        action: action3,
+        type: activityType1, 
+        statement: "Plankton, like tiny astronauts in the -------.?",
+        options: ['Space', 'Forest', 'Ocean'
+            ],
+        solution: [
+                "Ocean"
+            ],
+        extraInfo: 'Plankton is tiny! They are tiny creatures that float in the water, like astronauts in aquatic space...'
         },
-                {
+        {
             action: action3,
             type: activityType2,
             statement: "Ordena de posterior a anterior",
@@ -66,14 +78,28 @@ export const activitiesList: ActivitiesList = {
         },    
     ],
     [action4]: [
-        {
-            action: action4,
-            type: 'select',
-            statement: "How many hours a day does a phytoplancton need to rest?",
-            options: ['2', '4', '24'],
-            solution: ["24"],
-            extraInfo: 'Sabies que fdsaf'
-        },
+{
+    action: action4,
+    type: activityType1, 
+    statement: "Phytoplankton in the farms feed on ______, just like they're sunbathing all day!",
+    options: ['Moonlight', 'Starlight', 'Sunlight '
+        ],
+    solution: [
+            "Sunlight"
+        ],
+    extraInfo: "Phytoplankton in the farms feed on sunlight, just like they're sunbathing all day!, Phytoplankton in the farms can also help fight climate change by absorbing carbon dioxide from the air, like an ocean superhero..."
+    },
+    {
+    action: action4,
+    type: activityType1,
+    statement: "When phytoplankton grows in farms, it helps keep the oceans clean and provides food for many ------.",
+    options: ['Land animals', 'Marine critters', 'Flying birds'
+        ],
+    solution: [
+            "Marine critters"
+        ],
+    extraInfo: 'When phytoplankton grows in farms, it helps keep the oceans clean and provides food for many marine critters, Imagine phytoplankton farms as supermarkets for fish, where they find delicious and fresh food....'
+    },
                 {
             action: action4,
             type: activityType2,

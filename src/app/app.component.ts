@@ -33,11 +33,11 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.authService.getLocalStorageUser()
-      .subscribe(res => {
-        console.log("S'ha obtingut aquest usuari de localStorage: ");
-        console.log(res);
-      });
+    // this.authService.getLocalStorageUser()
+    //   .subscribe(res => {
+    //     console.log("S'ha obtingut aquest usuari de localStorage: ");
+    //     console.log(res);
+    //   });
     
 
     this.modalService.modalVisibility$.subscribe(data => {

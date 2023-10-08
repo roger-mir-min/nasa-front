@@ -62,6 +62,12 @@ export class AuthService {
     console.log(userFormValue);
     //al component s'haurà de navegar a login component
     return this.http.post<User>(rootEndpoint + `auth/register`, userFormValue).pipe(
+      tap(() => {
+        this.login({ email: userFormValue.email, password: userFormValue.password }).subscribe(res => {
+          this.router.navigate(['/video']);
+        }
+        );
+    }),
       catchError((error) => {
         if (error.status === 400) {
           console.log(error);
