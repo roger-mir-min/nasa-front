@@ -5,12 +5,14 @@ import { rootEndpoint } from '../models/endpoints';
 import { HttpClient } from '@angular/common/http';
 import { dummyPhyto } from '../models/phyto-dummy';
 import { phytoStateService } from './fito-state.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private http = inject(HttpClient);
+  private router = inject(Router);
 
   //Subscription for currentUser
   currentUser: User | null = null; //current logged in user
@@ -19,14 +21,25 @@ export class AuthService {
   subscUser: Subscription = this.currentUser$.subscribe(res => this.currentUser = res);
 
   constructor() { }
+
+  getLocalStorageUser() {
+    if (!this.currentUser && localStorage.getItem("currentUserNASA") != undefined) {
+    this.currentUser = JSON.parse(localStorage.getItem("currentUserNASA")!);
+    this.currentUserSubject.next(this.currentUser);
+    console.log("current user gotten from localStorage");
+    //part repetida de navbar component:
+      this.router.navigate(['dashboard']);
+    } 
+    return of(this.currentUser);
+  }
   
   login(formValue: UserForLogin) {
-    alert('usuari introduït: ' + formValue.email + ' i ' + formValue.password);
-    // this.currentUserSubject.next({name:'Pau', phytoplankton:dummyPhyto, email: 'aaa@aa.com', password:'asdf'});
-    // return of(''); 
+    // alert('usuari introduït: ' + formValue.email + ' i ' + formValue.password);
+
     //recorda posar tipus de la funció
     return this.http.post<User>(rootEndpoint + `auth/login`, { email: formValue.email, password: formValue.password }).pipe(
       tap((user: User) => {
+        localStorage.setItem("currentUserNASA", JSON.stringify(user));
         this.currentUserSubject.next(user); //phyto-state service ho rep i actualitza phyto-state
           console.log("New user logged in: " +  user);
           console.log(user);
@@ -45,7 +58,7 @@ export class AuthService {
   }
 
   signup(userFormValue: UserForSignup): Observable<any> {
-    alert('Signup amb: ' + userFormValue.name + userFormValue.email +  userFormValue.password + userFormValue.phytoplanktonName);
+    // alert('Signup amb: ' + userFormValue.name + userFormValue.email +  userFormValue.password + userFormValue.phytoplanktonName);
     console.log(userFormValue);
     //al component s'haurà de navegar a login component
     return this.http.post<User>(rootEndpoint + `auth/register`, userFormValue).pipe(
@@ -62,8 +75,9 @@ export class AuthService {
 
   logout() {
     this.http.post(rootEndpoint + 'auth/logout', this.currentUser).subscribe(res => {
-      alert('resposta: ' + res);
+      // alert('resposta: ' + res);
       console.log('resposta: ' + res);
+      this.router.navigate(['/home']);
    });
   }
 

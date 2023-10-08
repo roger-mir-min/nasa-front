@@ -9,7 +9,7 @@ import { ModalComponent } from 'src/app/shared/components/modal/modal.component'
 @Component({
   selector: 'app-activity-frame',
   templateUrl: './activity-frame.component.html',
-  styleUrls: ['./activity-frame.component.css']
+  styleUrls: ['./activity-frame.component.scss']
 })
 export class ActivityFrameComponent implements OnInit {
   @ViewChild(ModalComponent) modal!: ModalComponent;

@@ -7,7 +7,7 @@ import { phytoStateService } from 'src/app/services/fito-state.service';
 @Component({
   selector: 'app-activity-type1',
   templateUrl: './activity-type1.component.html',
-  styleUrls: ['./activity-type1.component.css']
+  styleUrls: ['./activity-type1.component.scss']
 })
 export class ActivityType1Component implements OnInit {
   private phytoStateService = inject(phytoStateService);

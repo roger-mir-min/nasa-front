@@ -64,9 +64,6 @@ get getPassword() {
     this.submitted = true;
     this.loading = true;
 
-    if (this.authService.currentUser) {
-      alert("There is a logged user already.");
-    } else {
       this.authService.login(formValue).subscribe({
         next: () => {
           this.router.navigate(['dashboard']);
@@ -79,6 +76,5 @@ get getPassword() {
             console.error(error);
           }
       });
-    }
     }
   }

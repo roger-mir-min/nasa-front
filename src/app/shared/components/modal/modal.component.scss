@@ -1,3 +1,13 @@
+:host{
+    display: block;
+    width: 1000px !important;
+}
+
+p{
+    width: 80%;
+    max-width: 80%;
+}
+
 /* Estils per l'overlay (fons) del modal */
 .modal-overlay {
     position: fixed;
@@ -22,9 +32,9 @@
 
 /* Estils pel contingut del modal */
 .modal-content {
-    width: 80%;
+    width: 100%;
     /* 80% de l'amplada de la vista del navegador */
-    max-width: 500px;
+    max-width: 800px;
     /* Però no més de 500px d'amplada */
     padding: 20px;
     background-color: #ffffff;

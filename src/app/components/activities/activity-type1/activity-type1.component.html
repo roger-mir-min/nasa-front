@@ -1,5 +1,4 @@
-<div>Acció/Tema (hauria de ser eat): {{activity.statement}}</div>
-<div>Tipus (hauria de ser select o map): {{activity.type}}</div>
+<div class="text-white text-xl mb-8">{{activity.statement}}</div>
 
 <ng-container *ngFor="let answer of activity.options; let i = index">
   <button (click)="checkAnswer(answer)">{{answer}}</button>

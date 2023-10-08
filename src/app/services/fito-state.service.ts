@@ -24,7 +24,7 @@ export class phytoStateService {
 
   sendResults(solvedActivity: SolvedActivity) {
     const body = { id: this.authService.currentUser?.id, action: solvedActivity.action, answer: solvedActivity.points };
-    alert("S'ha enviat: " + body.action + body.id + body.answer);
+    // alert("S'ha enviat: " + body.action + body.id + body.answer);
     console.log(body);
     //s'envia solució, es retorna nou estat que s'assigna a this.phytoState
     this.http.post<phytoState>(rootEndpoint + sendResultsEndpoint, body).pipe(tap(

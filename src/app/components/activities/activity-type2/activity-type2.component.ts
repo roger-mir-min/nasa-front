@@ -8,7 +8,7 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 @Component({
   selector: 'app-activity-type2',
   templateUrl: './activity-type2.component.html',
-  styleUrls: ['./activity-type2.component.css']
+  styleUrls: ['./activity-type2.component.scss']
 })
 export class ActivityType2Component implements OnInit {
   private phytoStateService = inject(phytoStateService);

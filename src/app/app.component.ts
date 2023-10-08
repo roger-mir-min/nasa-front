@@ -2,6 +2,9 @@ import { Component, inject } from '@angular/core';
 import { ModalService } from './services/modal.service';
 import { action0, action1, action2, action3, urlAction1, urlAction2, urlAction3, urlAction4, urlAction0 } from './models/temes';
 import { phytoStateService } from './services/fito-state.service';
+import { AuthService } from './services/auth.service';
+import { Observable } from 'rxjs';
+import { User } from './models/interfaces';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +13,10 @@ import { phytoStateService } from './services/fito-state.service';
 })
 export class AppComponent {
   private phytoService = inject(phytoStateService);
+  private authService = inject(AuthService);
   title = 'nasa-frontend';
+
+  user$: Observable<User|null>;
 
   isModalVisible = false;
   modalTitle = '';
@@ -18,9 +24,22 @@ export class AppComponent {
   modalAction = 1;
   modalPhytoImg = '';
 
-  constructor(private modalService: ModalService) { }
+  constructor(private modalService: ModalService) {
+    this.user$ = this.authService.currentUser$;
+  }
+
+  logout() {
+    this.authService.logout();
+  }
 
   ngOnInit(): void {
+    this.authService.getLocalStorageUser()
+      .subscribe(res => {
+        console.log("S'ha obtingut aquest usuari de localStorage: ");
+        console.log(res);
+      });
+    
+
     this.modalService.modalVisibility$.subscribe(data => {
       this.isModalVisible = data.visible;
       this.modalTitle = data.text1;

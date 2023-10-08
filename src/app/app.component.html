@@ -1,4 +1,13 @@
-<app-header></app-header>
+<nav class="absolute bg-white bg-opacity-10 z-10 font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 shadow sm:items-baseline w-full text-white">
+  <div class="mb-2 sm:mb-0">
+        <img routerLink="/" src="/assets/images/logo.png" alt="" width=5% height="100%">
+  </div>
+  <div>
+    <a routerLink="/login" class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">Home</a>
+    <a routerLink="/dashboard" class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">My Phyto</a>
+    <button (click)="logout()" *ngIf="user$|async" class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">Logout</button>
+  </div>
+</nav>
 <app-main></app-main>
 <app-footer></app-footer>
 
