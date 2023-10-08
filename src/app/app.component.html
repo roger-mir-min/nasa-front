@@ -6,7 +6,7 @@
     <div class="flex items-center">
       <a routerLink="/home" class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">Home</a>
       <a routerLink="/dashboard" class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">My Phyto</a>
-      <button (click)="logout()" *ngIf="user$|async" class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">Logout</button>
+      <button routerLink="/login" *ngIf="user$|async" class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">Logout</button>
     </div>
   </div>
 </nav>
